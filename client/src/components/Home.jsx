@@ -9,7 +9,8 @@ import SelectSeats from "./SelectSeats";
 import LastBookingDetails from "./LastBookingDetails";
 import { movies, seats, slots } from "./data";
 import useLocalStorage from "./UseLocalStorage";
-import axios from "../axiosConfig";
+// import axios from "../axiosConfig";
+import axios from "axios";
 
 // validation on negative numbers for seat input
 function containNegativeVal(seats) {
@@ -66,7 +67,7 @@ const Home = () => {
     setLastBooking({ isFinishLoading: false });
 
     axios
-      .get("/api/booking")
+      .get("https://book-that-show.onrender.com/api/booking")
       .then((res) => {
         if (typeof res.data.message === "string") {
           setLastBooking({
@@ -141,6 +142,7 @@ const Home = () => {
   };
 
   const submitBooking = (e) => {
+    e.preventDefault();
     const { movie, timeSlots, seats } = state;
 
     // Validation
@@ -172,7 +174,7 @@ const Home = () => {
 
     //post request
     axios
-      .post("/api/booking", {
+      .post("https://book-that-show.onrender.com/api/booking", {
         movie: state.movie,
         slot: state.timeSlots,
         seats: {
@@ -210,7 +212,7 @@ const Home = () => {
             timeSlots: "",
             dataPresent: false,
 
-            iSfinishLoading: false,
+            iSFinishLoading: false,
             seats: {
               a1: 0,
               a2: 0,
