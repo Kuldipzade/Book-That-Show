@@ -121,18 +121,13 @@ input {
   height: 410px;
   display: grid;
 }
-.booked_seat_wrapper {
-  /* border: 1px solid; */
-  border-radius: 7px;
-  padding: 12px 25px;
-  width: 173px;
-  margin-left: 52px;
-  margin-bottom: 10px;
-  background-color: #bab4b4;
-  color: #0a0a0a;
+
+.details-container {
+  display: grid;
+  justify-items: start;
 }
 .seat_booked {
-  font-weight: 600;
+  /* font-weight: 600; */
   color: rgb(0, 0, 0);
   /* background-color: #fffdfd; */
   /* padding: 4px 10px; */
@@ -140,6 +135,9 @@ input {
   border-radius: 4px;
   display: flex;
   width: 55px;
+}
+.booking_seat_sp {
+  font-weight: 600;
 }
 .heading_details {
   font-weight: 600;

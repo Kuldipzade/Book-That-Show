@@ -38,8 +38,6 @@ const initialState = {
     d1: 0,
     d2: 0,
   },
-
-  showSuccessAlert: false,
 };
 
 const Home = () => {
@@ -142,7 +140,6 @@ const Home = () => {
   };
 
   const submitBooking = (e) => {
-    e.preventDefault();
     const { movie, timeSlots, seats } = state;
 
     // Validation
@@ -221,7 +218,6 @@ const Home = () => {
               d1: 0,
               d2: 0,
             },
-            showSuccessAlert: false,
           });
         }
         enqueueSnackbar("Booking successful!", { variant: "success" });

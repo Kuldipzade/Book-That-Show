@@ -36,13 +36,13 @@ const LastBookingDetails = (props) => {
           {/* when last booking data is present and data fetching is finish*/}
 
           {lastBookingPresent && finishLoading && (
-            <div>
+            <div className="details-container">
               <div className="heading_details">Seats:</div>
               <div className="booked_seat_wrapper">
                 {/* map function for seat label */}
                 {seatLabels.map(({ label, key }) => (
                   <div className="d-flex align-items-center" key={key}>
-                    <span className="booking_seat_sp">{`${label}:-`}</span>
+                    <span className="booking_seat_sp">{`${label}:`}</span>
                     {seat && seat[key] ? (
                       <span className="seat_booked">{`${seat[key]}`}</span>
                     ) : (
